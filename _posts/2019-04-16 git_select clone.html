@@ -1,0 +1,58 @@
+---
+layout: post
+title: "첫 블로그 게시글!"
+subtitle: "지금은 간단한 테스트 할꺼야"
+date: now();
+background: "/img/posts/06.jpg"
+---
+
+<h2 class="section-heading">GIT 원하는 부분만 clone 하기</h2>
+
+<p class="mb-5">
+    ex) 해당 repo
+    <ul>
+        <li>test1
+            <ul>
+                <li><strong>clone_flie</strong></li>
+                <li>test_in</li>
+            </ul>
+        </li>
+        <li>test2</li>
+        <li>test3</li>
+    </ul>
+</p>
+
+<p class="mb-5">
+    clone_flie만을 clone 하고 싶을 경우 (sparse checkout) 기능참고
+</p>
+
+<p class="mb-5">
+    <ol>
+        <li>
+            1. sparse Checkout 이 가능하도록 설정<br />
+            Git code : <br />
+            git config core.sparseCheckout true
+        </li>
+        <li>
+            2. remote 추가<br />
+            Git code : <br />
+            git remote add -f origin &lt;REMOTE_URL&gt;
+        </li>
+        <li>
+            3. 원하는 폴더 위치 추가 (echo 이후에 "" 사이입력)<br />
+            Git code : <br />
+            echo "test1/clone_flie" &gt;&gt; .git/info/sparse-checkout
+        </li>
+        <li>
+            4. 파일 풀 받기<br />
+            Git code : <br />
+            git pull origin master
+        </li>
+    </ol>
+</p>
+
+<p class="mb-5">
+    해당내용은<br />
+    <p><a href="https://www.lesstif.com/pages/viewpage.action?pageId=20776761" title="클론하기 원본 url">클론내용 원본블로그</a></p>
+    위사이트를 참고 하였음 (삭제될까봐 미리 메모겸 게시글 등록)
+</p>
